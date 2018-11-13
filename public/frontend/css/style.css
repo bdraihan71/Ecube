@@ -524,7 +524,7 @@ header .download .btn-light:hover {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 30vh;
+  padding-top: 20vh;
   }
 
 .what-we-do-xs {
@@ -1243,21 +1243,6 @@ input[type=number] {
     background: #42B32F;
   }
 
-/* The below CSS will make the logo grey and on hover it'll turn into color */
-
-.owl-item {
-  vertical-align: 0;
-  filter: gray;
-  -webkit-filter: grayscale(1);
-  -webkit-transition: all .6s ease-in-out;
-  }
-  
-.owl-item:hover {
-  filter: none;
-  -webkit-filter: grayscale(0);
-  -webkit-transform: scale(1.01);
-}
-
 /* The below CSS will vertically center the carousel images */
 
 .owl-carousel .owl-stage {
@@ -1268,4 +1253,8 @@ input[type=number] {
 .owl-carousel .owl-item img {
   width: 100%;
   height: 100%;
+}
+
+.push-down {
+  margin-top: 100px;
 }

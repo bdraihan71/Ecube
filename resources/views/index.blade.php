@@ -29,21 +29,30 @@
                         <div class="navbar-nav font-weight-bold nav-back">
                             <a class="nav-item nav-link my-3" href="/#top">HOME</a>
                             <a class="nav-item nav-link my-3" href="/#page2">ABOUT</a>
+                            <!---
                             <a class="nav-item nav-link my-3" href="/#page4">PARTNERS</a>
                             <a class="nav-item nav-link my-3" href="/events/all/#top">EVENTS</a>
                             <a class="nav-item nav-link my-3" href="/shop/#top">SHOP</a>
+                            --->
                             @if(auth()->user() != null)
                                 <a class="nav-item nav-link my-3" href="/logout">LOGOUT</a>
+                            <!--
                                 <a class="nav-item nav-link my-3" href="/home/#top">DASHBOARD</a>
+                            -->
                             @else
+                             <!--
                                 <a class="nav-item nav-link my-3" href="/register/#top">REGISTER</a>
+                            -->
                                 <a class="nav-item nav-link my-3" href="/login/#top">LOGIN</a>
                             @endif
+                            <!---
                             <a class="nav-item nav-link my-3" href="/media">MEDIA</a>
                             <a class="nav-item nav-link my-3" href="/music">MUSIC</a>
                             <a class="nav-item nav-link my-3" href="/logistics">LOGISTICS</a>
                             <a class="nav-item nav-link my-3" href="/services">SERVICES</a>
+                            --->
                             <a class="nav-item nav-link my-3" href="/contact-us/#top">CONTACT</a>
+                            <!---
                             @if (auth()->user() != null)
                                 <a class="nav-item nav-link text-dark" href="/cart">
                                     <span class="fa-stack">
@@ -54,6 +63,7 @@
                                     </span>
                                 </a>
                             @endif
+                            --->
                         </div>
                     </div>
                 </div>
@@ -118,7 +128,7 @@
 				<header id="header">
 					<div id="div1" style="display: none">
                         <img class="parallax-img img-sm" src="/frontend/img/parallax6.png">
-                        <h1 class="footer-header parallax-text">Ecube Entertainment</h1>
+                        <h1 class="footer-header parallax-text">Sales Maestro</h1>
 
                             <div class="p-scroll">{!!$description->content!!}</div>
 
@@ -136,7 +146,7 @@
     
     
     
-    
+    <!---
     <div class="section">
         <div class="container-fluid what-we-do">
             <div class="row text-white">
@@ -155,7 +165,7 @@
             </div>
         </div>
     </div>
-    
+  
     <div class="section" id="partners">
         <section class="partners py-1 text-center">
             <h1 class="text-danger">Partners</h1>
@@ -221,7 +231,7 @@
             </section>
         @endif
     </div>
-    
+      --->
     <div class="section">
     
         <section id="footer" class="footer text-white text-center">
@@ -240,12 +250,14 @@
                         {!!$footer[1]->content!!}
                         {!!$footer[2]->content!!}	
                     </div>
+                    <!--
                     <div class="col-md-3">
                         <h4 class="footer-header font-weight-bold">Stay Connected</h4><br>
                         <a class="sc-links" target="_blank" href="{{ config('social.FACEBOOK_LINK') }}"><i class="fab fa-facebook-square fa-2x facebook"></i></a>&ensp;
                         <a class="sc-links" target="_blank" href="{{ config('social.YOUTUBE_LINK') }}"><i class="fab fa-youtube fa-2x youtube"></i></a>&ensp;
                         <a class="sc-links" target="_blank" href="{{ config('social.INSTAGRAM_LINK') }}"><i class="fab fa-instagram fa-2x instagram"></i></a>&ensp;
                     </div>
+                    -->
                 </div>
                 <div class="row">
                     <div class="col-md-5"></div>

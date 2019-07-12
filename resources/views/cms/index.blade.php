@@ -41,7 +41,7 @@
         <br>
 
         <div class="row">
-            <div class="col-md-3  text-right  form-label-control">Ecube Tagline</div>
+            <div class="col-md-3  text-right  form-label-control">Tagline</div>
             <div class="col-md-7">
                 <input type="text" class="form-control" maxlength="300" name="tagline" value="{{ old('tagline') == null ? $contents[3]->content : old('tagline') }}" placeholder="Place the current value here">
             </div>
@@ -50,7 +50,7 @@
         <br>
 
         <div class="row">
-            <div class="col-md-3  text-right  form-label-control">Ecube Description</div>
+            <div class="col-md-3  text-right  form-label-control">Description</div>
             <div class="col-md-7">
                 <div><i>Max 450 characters</i></div><br>
                 <textarea name="description" class="form-control" id="article-ckeditor" cols="30" rows="10">{{ old('description') == null ? $contents[4]->content : old('description') }}</textarea>
@@ -59,6 +59,7 @@
         
         <br>
 
+    <div style="display: none">
         <div class="row">
             <div class="col-md-3  text-right  form-label-control">What we do Title 1</div>
             <div class="col-md-7">
@@ -172,6 +173,7 @@
             </div>
         </div>
 
+    </div>
         <br>
 
         <div class="row">

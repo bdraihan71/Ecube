@@ -219,7 +219,7 @@ class ProfilesController extends Controller
 
         Auth::login($user);
 
-        flash('Welcome to Ecube!')->success();
+        flash('Welcome to SalesMaestro!')->success();
 
         return redirect('/');
     }

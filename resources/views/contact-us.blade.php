@@ -40,17 +40,20 @@
                     </form>
                 </div>
                 <div class="col-md-1"></div>
-                <div class="col-md-3 text-white">
-                    <h6 class="text-danger font-weight-bold">Head Office</h6>
+                <div class="col-md-3 text-blue">
+                    <h6 class="font-weight-bold">Head Office</h6>
                     {!!$contact[0]->content!!}
-                    <h6 class="text-danger font-weight-bold">Phone Numbers</h6>
+                    <h6 class="font-weight-bold">Phone Numbers</h6>
                     {!!$contact[1]->content!!}
-                    <h6 class="text-danger font-weight-bold">Email Address</h6>
+                    <h6 class="font-weight-bold">Email Address</h6>
                     {!!$contact[2]->content!!}
-                    <h6 class="text-danger font-weight-bold">Stay Connected</h6>
+                     <!--
+                    <h6 class="font-weight-bold">Stay Connected</h6>
                     <a class="sc-links" target="_blank" href="{{ config('social.FACEBOOK_LINK') }}"><i class="fab fa-facebook-square fa-2x facebook"></i></a>&ensp;
                 <a class="sc-links" target="_blank" href="{{ config('social.YOUTUBE_LINK') }}"><i class="fab fa-youtube fa-2x youtube"></i></a>&ensp;
                 <a class="sc-links" target="_blank" href="{{ config('social.INSTAGRAM_LINK') }}"><i class="fab fa-instagram fa-2x instagram"></i></a>&ensp;
+                
+            -->
                 </div>
             </div>
         </div>

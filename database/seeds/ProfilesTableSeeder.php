@@ -39,7 +39,7 @@ class ProfilesTableSeeder extends Seeder
         DB::table('profiles')->insert([
             'f_name' => 'Super',
             'l_name' => 'Admin',
-            'address' => 'Ecube',
+            'address' => 'SalesMaestro',
             'phone' => '1234567890',
             'user_id' => 3,
             'division' => 'Dhaka',

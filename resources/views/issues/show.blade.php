@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Events. Entertainment. Experience.">
 	<meta name="author" content="Techynaf">
-	<title>Ecube Entertainment</title>
+	<title>SalesMaestro</title>
 	<!-- Bootstrap core CSS -->
 	<link href="/frontend/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Font Awesome -->

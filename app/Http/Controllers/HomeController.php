@@ -76,14 +76,14 @@ class HomeController extends Controller
             'name' => 'required|max:200',
             'email' => 'required|max:200',
         ]);
-
+        
         $contact = new Contactee;
         $contact->name = $request->name;
         $contact->email = $request->email;
         $contact->body = $request->body;
         $contact->save();
 
-        Mail::to(env('MAIL_COPY_TO'))->queue(new vMail($contact));
+        Mail::to(env('MAIL_COPY_TO'))->send(new vMail($contact));
 
         flash('Message successfully delivered')->success();
         return redirect('/');

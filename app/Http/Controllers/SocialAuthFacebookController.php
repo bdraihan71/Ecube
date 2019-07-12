@@ -43,6 +43,6 @@ class SocialAuthFacebookController extends Controller
             Auth::login($user);
         }
 
-        return redirect('/')->with('success', 'Welcome to Ecube!');
+        return redirect('/')->with('success', 'Welcome to SalesMaestro!');
     }
 }

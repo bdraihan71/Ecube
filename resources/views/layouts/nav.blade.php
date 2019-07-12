@@ -11,22 +11,31 @@
                     <div class="navbar-nav font-weight-bold nav-back">
                         <a class="nav-item nav-link mt-1" href="/#top">HOME</a>
                         <a class="nav-item nav-link mt-1" href="/#page2">ABOUT US</a>
+                        <!---
                         <a class="nav-item nav-link mt-1" href="/#page4">PARTNERS</a>
                         <a class="nav-item nav-link mt-1" href="/events/all/#top">EVENTS</a>
                         <a class="nav-item nav-link mt-1" href="/shop">SHOP</a>
+                        -->
                         @if(auth()->user() != null)
                             <a class="nav-item nav-link mt-1" href="/logout">LOGOUT</a>
+                        <!---
                             <a class="nav-item nav-link mt-1" href="/home/#top">DASHBOARD</a>
+                        -->
                         @else
+                        <!---
                             <a class="nav-item nav-link mt-1" href="/register/#top">REGISTER</a>
+                        -->
                             <a class="nav-item nav-link mt-1" href="/login/#top">LOGIN</a>
                         @endif
+                         <!---
                         <a class="nav-item nav-link mt-1" href="/media">MEDIA</a>
                         <a class="nav-item nav-link mt-1" href="/music">MUSIC</a>
+                      
                         <a class="nav-item nav-link mt-1" href="/contact-us/#top">CONTACT US</a>
                         @if (auth()->user() != null)
                             <a class="nav-item nav-link" href="/cart"><i class="fas fa-cart-plus fa-2x"></i></a>
                         @endif
+                        -->
                     </div>
                 </div>
             </div>
@@ -43,21 +52,30 @@
                     <div class="navbar-nav font-weight-bold nav-back">
                         <a class="nav-item nav-link my-3" href="/#top">HOME</a>
                         <a class="nav-item nav-link my-3" href="/#page2">ABOUT</a>
+                         <!---
                         <a class="nav-item nav-link my-3" href="/#page4">PARTNERS</a>
                         <a class="nav-item nav-link my-3" href="/events/all/#top">EVENTS</a>
                         <a class="nav-item nav-link my-3" href="/shop/#top">SHOP</a>
+                         -->
                         @if(auth()->user() != null)
                             <a class="nav-item nav-link my-3" href="/logout">LOGOUT</a>
+                        <!---
                             <a class="nav-item nav-link my-3" href="/home/#top">DASHBOARD</a>
+                        -->
                         @else
+                        <!---
                             <a class="nav-item nav-link my-3" href="/register/#top">REGISTER</a>
+                        -->
                             <a class="nav-item nav-link my-3" href="/login/#top">LOGIN</a>
                         @endif
+                        <!---
                         <a class="nav-item nav-link my-3" href="/media">MEDIA</a>
                         <a class="nav-item nav-link my-3" href="/music">MUSIC</a>
                         <a class="nav-item nav-link my-3" href="/logistics">LOGISTICS</a>
                         <a class="nav-item nav-link my-3" href="/services">SERVICES</a>
+                        -->
                         <a class="nav-item nav-link my-3" href="/contact-us/#top">CONTACT</a>
+                        <!---
                         @if (auth()->user() != null)
                             <a class="nav-item nav-link text-dark" href="/cart">
                                 <span class="fa-stack">
@@ -68,6 +86,7 @@
                                 </span>
                             </a>
                         @endif
+                        -->
                     </div>
                 </div>
             </div>

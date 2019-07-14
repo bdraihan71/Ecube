@@ -39,25 +39,25 @@ class PartnersTableSeeder extends Seeder
         DB::table('partners')->insert([
             'name' => 'Le Name',
             'type' => 'local',
-            'img' => '/frontend/img/carousel2.jpeg',
+            'img' => '/frontend/img/partner1.png',
         ]);
 
         DB::table('partners')->insert([
             'name' => 'Le Name',
             'type' => 'local',
-            'img' => '/frontend/img/carousel3.jpeg',
+            'img' => '/frontend/img/partner2.png',
         ]);
 
         DB::table('partners')->insert([
             'name' => 'Le Name',
             'type' => 'international',
-            'img' => '/frontend/img/carousel1.jpeg',
+            'img' => '/frontend/img/partner3.png',
         ]);
 
         DB::table('partners')->insert([
             'name' => 'Le Name',
             'type' => 'international',
-            'img' => '/frontend/img/carousel2.jpeg',
+            'img' => '/frontend/img/partner4.png',
         ]);
 
         DB::table('partners')->insert([

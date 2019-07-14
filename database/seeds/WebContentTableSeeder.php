@@ -29,7 +29,7 @@ class WebContentTableSeeder extends Seeder
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => '<p>Tiger IT Consulting is an American-Bangladeshi worldwide consulting firm specializing in IT Services, Consulting, and Digital Solutions serving the public and private sector. We work with our clients to create a compelling information technology strategy by employing a passionate international workforce that uses bold and innovative techniques to execute and deliver impactful results. Our client focused teams are dedicated to understanding and delivering end-to-end digital transformation strategies that enable our clients to be more confident in their technology capabilities.</div></p>',
+            'content' => '<p>Tiger IT Consulting is an American-Bangladeshi worldwide consulting firm specializing in IT Services, Consulting, and Digital Solutions serving the public and private sector. We work with our clients to create a compelling information technology strategy by employing a passionate international workforce that uses bold and innovative techniques to execute and deliver impactful results. Our client focused teams are dedicated to understanding and delivering end-to-end digital transformation strategies that enable our clients to be more confident in their technology capabilities.</p>',
         ]);
 
         DB::table('web_contents')->insert([

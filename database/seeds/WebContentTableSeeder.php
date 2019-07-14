@@ -74,7 +74,7 @@ class WebContentTableSeeder extends Seeder
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => 'Banani, Dhaka, Bangladesh',
+            'content' => 'Dhaka, Bangladesh',
         ]);
 
         DB::table('web_contents')->insert([
@@ -82,7 +82,7 @@ class WebContentTableSeeder extends Seeder
         ]);
 
         DB::table('web_contents')->insert([
-            'content' => '<p>Email: ecube@gmail.com</p>',
+            'content' => '<p>Email: tigerit@gmail.com</p>',
         ]);
     }
 }

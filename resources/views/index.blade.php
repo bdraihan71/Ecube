@@ -159,7 +159,7 @@
     
     <div class="section" id="partners">
         <section class="partners py-1 text-center">
-            <h1 class="text-danger">Partners</h1>
+            <h1 class="text-dark">Partners</h1>
             <div class="container">
                 <div class="row">
                     <div class="owl-carousel partners-carousel">
@@ -197,7 +197,7 @@
         
         @if (App\WebContent::find(21) == null || App\WebContent::find(21)->content == 0)
             <section class="partners py-5 text-center">
-                <h1 class="text-danger">International Partners</h1>
+                <h1 class="text-dark">Clients</h1>
                 <div class="container">
                     <div class="row">
                         @if (count($int_partners) < 6)
@@ -209,7 +209,7 @@
                                 </div>
                             @endforeach
                         @else
-                            <div class="owl-carousel partners-carousel">
+                            <div class="owl-carousel clients-carousel">
                                 @foreach($int_partners as $partner)
                                     <div class="">
                                         <img class="card-img-top" src="{{$partner->img}}" alt="Partner Logo">
@@ -318,14 +318,42 @@
 						autoplay: true
 					},
 					1000: {
-						items: 6,
-						nav: true,
+						items: 4,
+						nav: false,
 						autoplay: true
 					}
 				}
 			});
 
 		});
+
+
+        $(document).ready(function () {
+
+            $('.clients-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false,
+                        autoplay: true
+                    },
+                    600: {
+                        items: 1,
+                        nav: false,
+                        autoplay: true
+                    },
+                    1000: {
+                        items: 1,
+                        nav: false,
+                        autoplay: true
+                    }
+                }
+            });
+
+            });
 
 
 		$(document).ready(function () {

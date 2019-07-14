@@ -43,7 +43,7 @@
                             <a class="nav-item nav-link my-3" href="/music">MUSIC</a>
                             <a class="nav-item nav-link my-3" href="/logistics">LOGISTICS</a>
                             <a class="nav-item nav-link my-3" href="/services">SERVICES</a> --}}
-                            <a class="nav-item nav-link my-3" href="/contact-us/#top">Contact Us</a>
+                            <a class="nav-item nav-link my-3" href="#">Contact Us</a>
                             <a class="nav-item nav-link my-3" href="#">Blog</a>
                             @if (auth()->user() != null)
                                 <a class="nav-item nav-link text-dark" href="/cart">
@@ -101,9 +101,13 @@
 
                 <img class="gif w-100" src="/frontend/img/video.gif" alt="Logo">
 
-            <div class="title">
+            {{-- <div class="title">
                 <h1>{{$tagline->content}}</h1>
+            </div> --}}
+            <div class="title">
+                <h1 class="display-4">A COMPLETE<br> IT SOLUTION COMPANY<br><span class="h6 tagline">We bring it to live.</span></h1>
             </div>
+
         </header>
     </div>
     

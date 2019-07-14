@@ -59,7 +59,7 @@
                     </div>
                 </div>
             </nav>
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            {{-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -92,8 +92,14 @@
                 </a>
                 {{-- <a href="#feature" class="mouse-hover">
                   <div class="mouse"></div>
-                </a> --}}
-            </div>
+                </a> --}
+            </div> --}}
+{{-- 
+                <video class="" preload="" loop="" width="100%" height="100%">
+                    <source src="/frontend/img/video.gif" type='video/mp4'/>
+                </video> --}}
+
+                <img class="gif w-100" src="/frontend/img/video.gif" alt="Logo">
 
             <div class="title">
                 <h1>{{$tagline->content}}</h1>

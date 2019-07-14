@@ -52,19 +52,23 @@
                     </div>
                 </div>
 
+            <!--
                 <div class="form-group row black-bg">
                     <div class="col-md-6 offset-md-4">
                         <a href="/resend">Resend Verification Email</a>
                     </div>
                 </div>
-
+-->
                 <button type="submit" class="btn black-bg register-btn btn-reg">{{ __('Login') }}</button>
                 <br>
                 <br>
+
+            <!--
                 <a href="{{url('/redirect/facebook')}}" class="black-bg btn-facebook register-btn btn">Login with Facebook</a>
                 <br>
                 <br>
                 <a href="/redirect" class="black-bg register-btn btn-google btn">Login with Gmail</a>
+            -->
             </form>
         </div>
     </div>

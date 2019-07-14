@@ -140,14 +140,14 @@
     
     <div class="section">
         <div class="container-fluid what-we-do">
-            <div class="row text-white">
-                <div class="col-md-3"></div>
-                <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-9">
                     <div class="owl-carousel wdwd-carousel">
                         @foreach ($wwd as $header)
                             <div>
-                                <h1 class="text-danger">{{$header->content}}</h1>
-                                <p>{!!$wwds[$loop->index]->content!!}</p>
+                                <h1 class="solution-text-color">{{$header->content}}</h1>
+                                <p class="text-dark">{!!$wwds[$loop->index]->content!!}</p>
                             </div>
                         @endforeach
                     </div>
@@ -225,12 +225,12 @@
     
     <div class="section">
     
-        <section id="footer" class="footer text-white text-center">
+        <section id="footer" class="footer text-center">
             <div class="container">
                 <div class="row footer-padding-top">
                     <div class="col-md-3">
                     <br>
-                        <img class="logo" src="/frontend/img/logo.svg" alt="Logo">
+                        <img class="logo" src="/frontend/img/logo.png" alt="Logo">
                     </div>
                     <div class="col-md-3">
                         <h4 class="footer-header font-weight-bold">Head Office</h4><br>
@@ -244,8 +244,8 @@
                     <div class="col-md-3">
                         <h4 class="footer-header font-weight-bold">Stay Connected</h4><br>
                         <a class="sc-links" target="_blank" href="{{ config('social.FACEBOOK_LINK') }}"><i class="fab fa-facebook-square fa-2x facebook"></i></a>&ensp;
-                        <a class="sc-links" target="_blank" href="{{ config('social.YOUTUBE_LINK') }}"><i class="fab fa-youtube fa-2x youtube"></i></a>&ensp;
-                        <a class="sc-links" target="_blank" href="{{ config('social.INSTAGRAM_LINK') }}"><i class="fab fa-instagram fa-2x instagram"></i></a>&ensp;
+                        <a class="sc-links" target="_blank" href="{{ config('social.YOUTUBE_LINK') }}"><i class="fab fa-twitter-square fa-2x twitter"></i></a>&ensp;
+                        <a class="sc-links" target="_blank" href="{{ config('social.INSTAGRAM_LINK') }}"><i class="fab fa-linkedin fa-2x linkedin"></i></a>&ensp;
                     </div>
                 </div>
                 <div class="row">
@@ -259,6 +259,9 @@
                     </div>
                     <div class="col-md-5"></div>
                 </div>
+            </div>
+            <div class="copy w-100 border-top">
+                <p class="my-5">All Copy Right &copy; tigerit.com</p>
             </div>
         </section>
     </div>

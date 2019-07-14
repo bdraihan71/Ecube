@@ -374,7 +374,7 @@ header .download .btn-light:hover {
 #container {
   min-height: 100vh;
   width: 100%;
-  background: black;
+  background: #fafbfc;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bec8d6', endColorstr='#ced5e0', GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
 }
@@ -438,7 +438,7 @@ header .download .btn-light:hover {
 
 #header {
   padding: 100px 200px 0px 200px;
-  color: white;
+  color: black;
   text-align: center;
 }
 
@@ -526,7 +526,7 @@ header .download .btn-light:hover {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 20vh;
+  padding-top: 45vh;
 }
 
 .what-we-do-xs {
@@ -580,12 +580,13 @@ header .download .btn-light:hover {
 
 /* Footer */
 .footer {
-  background-color: black;
+  background-color: #f0f2f5;
   height: 100vh;
+  color: #1b2d52;
 }
 
 .footer-padding-top {
-  padding-top: 20%;
+  padding-top: 30%;
 }
 
 .copyright {
@@ -1030,6 +1031,10 @@ header .download .btn-light:hover {
   color: #2C6A93;
 }
 
+.linkedin:hover {
+  color: #4875B4; 
+}
+
 /* Dashboard */
 .dashboard {
   background-color: black;
@@ -1128,7 +1133,7 @@ input[type=number] {
 }
 
 .sc-links {
-  color: #E3E3E3;
+  color: #1b2d52;
 }
 
 .font-black {
@@ -1177,7 +1182,7 @@ input[type=number] {
 }
 
 .footer-header {
-  color: #FF0000;
+  color: #1b2d52;
 }
 
 .wwd-text {
@@ -1568,4 +1573,15 @@ html {
 .hint {
   font-style: italic;
   font-size: 0.7em;
+}
+
+
+/* TigerIT CSS */
+.copy{
+  position: absolute;
+  bottom: 0;
+}
+
+.solution-text-color{
+  color: #1b2d52;
 }

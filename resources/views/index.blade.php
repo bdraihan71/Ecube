@@ -118,8 +118,8 @@
 
 				<header id="header">
 					<div id="div1" style="display: none">
-                        <img class="parallax-img img-sm" src="/frontend/img/parallax6.png">
-                        <h1 class="footer-header parallax-text">Ecube Entertainment</h1>
+                        <img class="parallax-img img-sm" src="/frontend/img/logo.png">
+                        <h1 class="h1">About</h1>
 
                             <div class="p-scroll">{!!$description->content!!}</div>
 

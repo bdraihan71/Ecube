@@ -200,7 +200,65 @@
                 <h1 class="text-dark">Clients</h1>
                 <div class="container">
                     <div class="row">
-                        @if (count($int_partners) < 6)
+                        <!-- Client Logos Section -->
+                        <section id="client-logos" class="wow fadeIn ptb ptb-sm-80">
+                                <div class="container">
+                                    <div class="owl-carousel testimonial-carousel text-dark">
+                                        <div class="item">
+                                            <div class="testimonial text-center">
+                                                <div class="container-icon"><i class="fa fa-quote-right"></i></div>
+                                                <p class="lead">" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed dolorem a maxime esse eligendi consequatur corrupti nihil ullam optio blanditiis! "</p>
+                                                <div class="Container">
+                                                    <div class="row my-4">
+                                                        <div class="col-md-5"></div>
+                                                        <div class="col-md-2">
+                                                            <img src="/frontend/img/profile.jpg" class="client-img rounded-circle" alt="Client-Img">
+                                                        </div>
+                                                        <div class="col-md-5"></div>
+                                                    </div>
+                                                </div>
+                                                <h6 class="quote-author">Lorem Ipsum <span style="font-weight: 400;">( Lorem )</span></h6>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="testimonial text-center">
+                                                <div class="container-icon"><i class="fa fa-quote-right"></i></div>
+                                                <p class="lead">" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, doloremque! "</p>
+                                                <div class="Container">
+                                                        <div class="row my-4">
+                                                            <div class="col-md-5"></div>
+                                                            <div class="col-md-2">
+                                                                <img src="/frontend/img/profile.jpg" class="client-img rounded-circle" alt="Client-Img">
+                                                            </div>
+                                                            <div class="col-md-5"></div>
+                                                        </div>
+                                                    </div>
+                                                <h6 class="quote-author">Lorem Ipsum Dolor <span style="font-weight: 400;">( Lorem )</span></h6>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="testimonial text-center">
+                                                <div class="container-icon"><i class="fa fa-quote-right"></i></div>
+                                                <p class="lead">" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, veritatis aut ea nam quidem eveniet. "</p>
+                                                <div class="Container">
+                                                        <div class="row my-4">
+                                                            <div class="col-md-5"></div>
+                                                            <div class="col-md-2">
+                                                                <img src="/frontend/img/profile.jpg" class="client-img rounded-circle" alt="Client-Img">
+                                                            </div>
+                                                            <div class="col-md-5"></div>
+                                                        </div>
+                                                    </div>
+                                                <h6 class="quote-author">Lorem <span style="font-weight: 400;">( Lorem )</span></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- End Client Logos Section -->
+
+
+                        {{-- @if (count($int_partners) < 6)
                             @foreach ($int_partners as $partner)
                                 <div class="col">
                                     <div class="text-center">
@@ -216,7 +274,7 @@
                                     </div>
                                 @endforeach
                             </div>
-                        @endif
+                        @endif --}}
                     </div>
                 </div>
             </section>
@@ -354,6 +412,37 @@
             });
 
             });
+
+
+
+            $(document).ready(function () {
+
+            $('.testimonial-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false,
+                        autoplay: true
+                    },
+                    600: {
+                        items: 1,
+                        nav: false,
+                        autoplay: true
+                    },
+                    1000: {
+                        items: 1,
+                        nav: true,
+                        autoplay: true
+                    }
+                }
+            });
+
+            });
+
+
 
 
 		$(document).ready(function () {

@@ -1,16 +1,16 @@
-<script src="/frontend/vendor/jquery/jquery.min.js"></script>
-<script src="/frontend/vendor/jquery/popper.min.js"></script>
-<script src="/frontend/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="{{ asset('frontend/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('frontend/vendor/jquery/popper.min.js') }}"></script>
+<script src="{{ asset('frontend/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 <!-- Scripts for WOW -->
-<script src="/frontend/vendor/animate/wow.min.js"></script>
+<script src="{{ asset('frontend/vendor/animate/wow.min.js') }}"></script>
 <!-- Scripts for OWL -->
-<script src="/frontend/vendor/owl/js/owl.carousel.min.js"></script>
+<script src="{{ asset('frontend/vendor/owl/js/owl.carousel.min.js') }}"></script>
 <!-- Scripts for Fullpage -->
-<script src="/frontend/vendor/fullpage/fullpage.min.js"></script>
+<script src="{{ asset('frontend/vendor/fullpage/fullpage.min.js') }}"></script>
 <!-- Custom scripts -->
-<script src="/frontend/js/script.js"></script>
+<script src="{{ asset('frontend/js/script.js') }}"></script>
 
-<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+<script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
 <script>
     CKEDITOR.replace( 'article-ckeditor' );
 </script>

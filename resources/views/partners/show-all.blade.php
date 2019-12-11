@@ -11,16 +11,16 @@
                 @foreach($local_partners as $partner)
                     <div class="col-md-6">
                         <div class="text-center">
-                            <img src="{{ asset('{{$partner->img}}') }}" height="300" width="300" alt="Partner Logo">
+                            <img src="{{ asset($partner->img) }}" height="300" width="300" alt="Partner Logo">
                         </div>
                         <br>
                         <h4 class="text-center">{{$partner->name}}</h4>
                         @if (auth()->user() != null)
                             @if (!App\Http\Controllers\Controller::notAdmin())
                                 <br><br>
-                                <a href="{{ asset('partner/edit/{{$partner->id}}') }}" class="btn btn-danger w-100">Edit</a>
+                                <a href="{{ asset(partner/edit/$partner->id) }}" class="btn btn-danger w-100">Edit</a>
                                 <br><br>
-                                <a href="{{ asset('partner/delete/{{$partner->id}}') }}" class="btn black-button w-100">Delete</a>
+                                <a href="{{ asset(partner/delete/$partner->id) }}" class="btn black-button w-100">Delete</a>
                             @endif
                         @endif
                         <br><br><br>
@@ -42,16 +42,16 @@
                 @foreach($int_partners as $partner)
                     <div class="col-md-6">
                         <div class="text-center">
-                            <img src="{{ asset('{{$partner->img}}') }}" height="300" width="300" alt="Partner Logo">
+                            <img src="{{ asset($partner->img) }}" height="300" width="300" alt="Partner Logo">
                         </div>
                         <br>
                         <h4 class="text-center">{{$partner->name}}</h4>
                         @if (auth()->user() != null)
                             @if (!App\Http\Controllers\Controller::notAdmin())
                                 <br><br>
-                                <a href="{{ asset('partner/edit/{{$partner->id}}') }}" class="btn btn-danger w-100">Edit</a>
+                                <a href="{{ asset('partner/edit/' . $partner->id ) }}" class="btn btn-danger w-100">Edit</a>
                                 <br><br>
-                                <a href="{{ asset('partner/delete/{{$partner->id}}') }}" class="btn black-button w-100">Delete</a>
+                                <a href="{{ asset('partner/delete/' . $partner->id ) }}" class="btn black-button w-100">Delete</a>
                             @endif
                         @endif
                         <br><br><br>

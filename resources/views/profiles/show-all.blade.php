@@ -32,13 +32,15 @@
         <hr>
         @foreach ($users as $user)
             <div class="row">
-                <div class="col">{{$user->profile->f_name.' '.$user->profile->m_name.' '.$user->profile->l_name}}</div>
-                <div class="col">{{$user->profile->gender}}</div>
-                <div class="col">{{$user->email}}</div>
-                <div class="col">{{$user->profile->phone}}</div>
-                <div class="col">{{$user->profile->fb_url}}</div>
-                @if (!$flow)
-                    <a href="/profile/delete/{{$user->id}}" class="btn black-button w-100">Delete</a>
+                @if($user->profile != null)
+                    <div class="col">{{$user->profile->f_name.' '.$user->profile->m_name.' '.$user->profile->l_name}}</div>
+                    <div class="col">{{$user->profile->gender}}</div>
+                    <div class="col">{{$user->email}}</div>
+                    <div class="col">{{$user->profile->phone}}</div>
+                    <div class="col">{{$user->profile->fb_url}}</div>
+                    @if (!$flow)
+                        <a href="/profile/delete/{{$user->id}}" class="btn black-button w-100">Delete</a>
+                    @endif
                 @endif
             </div>
             <hr>

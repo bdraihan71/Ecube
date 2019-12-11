@@ -41,7 +41,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end font-sm" id="navbarNavAltMarkup">
                     <div class="navbar-nav font-weight-bold nav-back">
-                        <a class="nav-item nav-link my-3" href="{{ asset('#top') }}">HOME</a>
+                        <a class="nav-item nav-link my-3" href="{{ asset('/#top') }}">HOME</a>
                         <a class="nav-item nav-link my-3" href="{{ asset('#page2') }}">ABOUT</a>
                         <a class="nav-item nav-link my-3" href="{{ asset('#page4') }}">PARTNERS</a>
                         <a class="nav-item nav-link my-3" href="{{ asset('events/all/#top') }}">EVENTS</a>

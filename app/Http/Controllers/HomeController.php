@@ -83,7 +83,7 @@ class HomeController extends Controller
         $contact->body = $request->body;
         $contact->save();
 
-        Mail::to(env('MAIL_COPY_TO'))->queue(new vMail($contact));
+        Mail::to("info@ecube-entertainment.com")->queue(new vMail($contact));
 
         flash('Message successfully delivered')->success();
         return redirect('/');

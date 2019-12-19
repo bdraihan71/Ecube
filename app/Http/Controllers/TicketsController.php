@@ -128,8 +128,8 @@ class TicketsController extends Controller
             return redirect($url);
         }
 
-        $type = TicketType::find($id);
-
+        $type = TicketType::find($request->type);
+        
         if ($type->price == 0) {    
             $now = new Carbon;
             $now = $now->format('Ymd');

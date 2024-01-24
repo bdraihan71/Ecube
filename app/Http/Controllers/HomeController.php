@@ -50,11 +50,15 @@ class HomeController extends Controller
         $contact = array(WebContent::where('id', 16)->first(), WebContent::where('id', 17)->first(), WebContent::where('id', 18)->first());
 
         if (auth()->user() == null) {
+            flash('Leave us a message!')->success();
+
             return view('contact-us')->with('footer', $this->footer())->with('contact', $contact);
         }
 
         if (!$this->notAdmin()) {
             $contacts = Contactee::orderBy('id', 'desc')->paginate(10);
+
+            flash('Leave us a message!')->success();
 
             return view('view-contactees')->with('footer', $this->footer())->with('contact', $contact)->
             with('contacts', $contacts);
@@ -66,7 +70,9 @@ class HomeController extends Controller
     public function contacted (Request $request)
     {
         $this->validate($request, [
-            'body' => 'required',
+            'body' => 'required|max:500',
+            'name' => 'required|max:200',
+            'email' => 'required|max:200',
         ]);
 
         $contact = new Contactee;

@@ -21,7 +21,9 @@ class PartnersController extends Controller
     public function store (Request $request)
     {
         $this->validate($request, [
-            'url' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
+            'url' => 'image|required|max:3000|mimes:jpeg,png,jpg,gif,svg',
+            'type' => 'required',
+            'name' => 'required|max:80'
         ]);
 
         if ($this->notAdmin()) {
@@ -59,6 +61,18 @@ class PartnersController extends Controller
 
     public function update (Request $request, $id)
     {
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this view')->error();
+
+            return redirect('/');
+        }
+
+        $this->validate($request, [
+            'url' => 'image|nullable|max:3000|mimes:jpeg,png,jpg,gif,svg',
+            'type' => 'required',
+            'name' => 'required|max:80'
+        ]);
+
         $partner = Partner::find($id);
 
         $partner->name = $request->name;

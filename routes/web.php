@@ -14,9 +14,9 @@
 //Profile Routes
 Route::get('/create/admin', 'ProfilesController@adminCreate')->middleware('auth');
 Route::post('/create/admin', 'ProfilesController@adminStore')->middleware('auth');
-Route::get('register', 'ProfilesController@register')->name('register');
-Route::post('register', 'ProfilesController@create');
-Route::post('social-register', 'ProfilesController@social');
+Route::get('/register', 'ProfilesController@register')->name('register');
+Route::post('/register', 'ProfilesController@create');
+Route::post('/social-register', 'ProfilesController@social');
 Route::get('home', 'ProfilesController@dashboard')->middleware('auth');
 Route::post('/profile/name', 'ProfilesController@name')->middleware('auth');
 Route::post('/profile/email', 'ProfilesController@email')->middleware('auth');
@@ -158,6 +158,7 @@ Route::get('/analytics/events', 'AnalyticsController@events')->middleware('auth'
 Route::get('/analytics/events/{id}', 'AnalyticsController@event')->middleware('auth');
 Route::get('/analytics/present/{id}', 'AnalyticsController@present')->middleware('auth');
 Route::get('/analytics/present/issue/{id}', 'AnalyticsController@issuePresent')->middleware('auth');
+Route::post('/present/barcode', 'AnalyticsController@barcodePresent')->middleware('auth');
 
 //Media Routes
 Route::get('/media', 'MediaController@index');

@@ -115,6 +115,8 @@ class EventsController extends Controller
             return redirect('/');
         }
 
+        flash('Welcome to events creater');
+
         return view('events/create')->with('footer', $this->footer());
     }
 
@@ -127,13 +129,29 @@ class EventsController extends Controller
         }
 
         $this->validate($request, [
-            'description' => 'required',
-            'url_1' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
-            // 'url_2' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
-            'url_3' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
-            'url_4' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg',
-            'url_5' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg'
+            'name' => 'required|max:100',
+            'tagline' => 'required|max:150',
+            'date_start' => 'required|date',
+            'date_end' => 'required|date',
+            'start' => 'required',
+            'end' => 'required',
+            'location' => 'required|max:80',
+            'description' => 'required|max:500',
+            'url_1' => 'image|required|max:3000|mimes:jpeg,png,jpg,gif,svg',
+            'url_3' => 'image|required|max:3000|mimes:jpeg,png,jpg,gif,svg',
+            'url_4' => 'image|required|max:3000|mimes:jpeg,png,jpg,gif,svg',
+            'url_5' => 'image|required|max:3000|mimes:jpeg,png,jpg,gif,svg',
+            'ticket_number' => 'required|integer|min:0',
         ]);
+
+        // $this->validate($request, [
+        //     'description' => 'required',
+        //     'url_1' => 'image|required|max:3000|mimes:jpeg,png,jpg,gif,svg',
+        //     // 'url_2' => 'image|required|max:3000|mimes:jpeg,png,jpg,gif,svg',
+        //     'url_3' => 'image|required|max:3000|mimes:jpeg,png,jpg,gif,svg',
+        //     'url_4' => 'image|required|max:3000|mimes:jpeg,png,jpg,gif,svg',
+        //     'url_5' => 'image|required|max:3000|mimes:jpeg,png,jpg,gif,svg'
+        // ]);
 
         $event = new Event;
         $event->name = $request->name;
@@ -152,6 +170,8 @@ class EventsController extends Controller
 
         $event->ticket_number = $request->ticket_number;
         $event->save();
+
+        flash('Your event has been successfully created')->success();
         
         return view('events/add-info')->with('id', $event->id)->with('information', array())->with('footer', $this->footer());
     }
@@ -165,7 +185,8 @@ class EventsController extends Controller
         }
 
         $this->validate($request, [
-            'information' => 'required',
+            'information' => 'required|max:50',
+            'name' => 'required|max:500'
         ]);
 
         $info = new AdditionalInformation;
@@ -175,6 +196,8 @@ class EventsController extends Controller
         $info->save();
 
         $information = AdditionalInformation::where('event_id', $request->id)->get();
+
+        flash('Additional Infromation successfully stored')->success();
 
         return view('events/add-info')->with('id', $request->id)->with('information', $information)->with('footer', $this->footer());
     }
@@ -187,6 +210,8 @@ class EventsController extends Controller
             return redirect('/');
         }
 
+        flash('Please add questions for the event ticket buyers');
+
         return view('events/add-q')->with('id', $id)->with('questions', array())->with('footer', $this->footer());
     }
 
@@ -198,12 +223,18 @@ class EventsController extends Controller
             return redirect('/');
         }
 
+        $this->validate($request, [
+            'question' => 'required|max:200',
+        ]);
+
         $question = new Question;
         $question->question = $request->question;
         $question->event_id = $request->id;
         $question->save();
 
         $questions = Question::where('event_id', $request->id)->get();
+
+        flash('Question successfully added')->success();
 
         return view('events/add-q')->with('id', $request->id)->with('questions', $questions)->with('footer', $this->footer());
     }
@@ -243,7 +274,14 @@ class EventsController extends Controller
         }
 
         $this->validate($request, [
-            'description' => 'required',
+            'name' => 'required|max:100',
+            'tagline' => 'required|max:150',
+            'date_start' => 'required|date',
+            'date_end' => 'required|date',
+            'start' => 'required',
+            'end' => 'required',
+            'location' => 'required|max:80',
+            'description' => 'required|max:500',
         ]);
 
         $event = Event::where('id', $id)->first();
@@ -280,6 +318,8 @@ class EventsController extends Controller
 
         $url = '/events/edit/'.$event->id;
 
+        flash('Event successfully edited')->success();
+
         return redirect($url);
     }
 
@@ -290,6 +330,11 @@ class EventsController extends Controller
             
             return redirect('/');
         }
+
+        $this->validate($request, [
+            'add_name.*' => 'required|max:150',
+            'add_information.*' => 'required|max:500'
+        ]);
 
         $information = AdditionalInformation::where('event_id', $id)->get();
         $url = '/events/edit/'.$id.'#add';
@@ -315,6 +360,8 @@ class EventsController extends Controller
             $info->save();
         }
 
+        flash('Event additional information successfully edited')->success();
+
         return redirect($url);
     }
 
@@ -325,6 +372,10 @@ class EventsController extends Controller
 
             return redirect('/');
         }
+
+        $this->validate($request, [
+            'question.*' => 'required|max:150',
+        ]);
 
         $questions = Question::where('event_id', $id)->get();
         $url = '/events/edit/'.$id.'#q';
@@ -341,6 +392,8 @@ class EventsController extends Controller
             $question->save();
         }
 
+        flash('Event questions successfully edited')->success();
+
         return redirect($url);
     }
 
@@ -356,6 +409,8 @@ class EventsController extends Controller
         $url = '/events/edit/'.$info->event_id.'#add';
         $info->delete();
 
+        flash('Event additional information successfully deleted');
+
         return redirect($url);
     }
 
@@ -370,6 +425,8 @@ class EventsController extends Controller
         $question = Question::where('id', $id)->first();
         $url = '/events/edit/'.$question->event_id.'#q';
         $question->delete();
+
+        flash('Event question successfully deleted');
 
         return redirect($url);
     }
@@ -416,6 +473,10 @@ class EventsController extends Controller
 
             return redirect('/events');
         }
+
+        $this->validate($request, [
+            'event' => 'required|integer',
+        ]);
 
         $feature = WebContent::find(19);
         

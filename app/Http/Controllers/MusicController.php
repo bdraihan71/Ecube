@@ -27,6 +27,11 @@ class MusicController extends Controller
             return redirect('/music');
         }
 
+        $this->validate($request, [
+            'name' => 'required|max:100',
+            'music' => 'required'
+        ]);
+
         $music = new Music;
         $music->name = $request->name;
 
@@ -40,6 +45,8 @@ class MusicController extends Controller
         }
 
         $music->save();
+
+        flash('Music successfully added')->success();
 
         return redirect('/music');
     }

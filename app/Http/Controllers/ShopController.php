@@ -36,8 +36,11 @@ class ShopController extends Controller
     public function store (Request $request)
     {
         $this->validate($request, [
+            'name' => 'required|max:50',
+            'price' => 'required|integer',
+            'quantity' => 'required|integer',
             'description' => 'required',
-            'img' => 'image|required|max:1999|mimes:jpeg,png,jpg,gif,svg'
+            'img' => 'image|required|max:3000|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         $product = new Product;
@@ -63,7 +66,11 @@ class ShopController extends Controller
     public function update (Request $request, $id)
     {
         $this->validate($request, [
+            'name' => 'required|max:50',
+            'price' => 'required|integer',
+            'quantity' => 'required|integer',
             'description' => 'required',
+            'img' => 'image|nullable|max:3000|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         $product = Product::where('id', $id)->first();

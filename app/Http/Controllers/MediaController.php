@@ -47,6 +47,12 @@ class MediaController extends Controller
             return redirect('/media');
         }
 
+        $this->validate($request, [
+            'event' => 'required',
+            'url.*' => 'required|image|max:3000',
+            'caption.*' => 'required|max:30',
+        ]);
+
         $counter = 0;
 
         foreach ($request->url as $url) {
@@ -92,7 +98,23 @@ class MediaController extends Controller
     public function updateAlbum (Request $request)
     {
         if ($this->notAdmin()) {
-            flash('You are not authorized to access this view')->error;
+            flash('You are not authorized to access this view')->error();
+
+            return redirect('/media');
+        }
+
+        $this->validate($request, [
+            'caption.*' => 'required|max:30',
+        ]);
+
+        if ($request->cap != null) {
+            $this->validate($request, [
+                'all' => 'required|image|max:3000',
+            ]);
+        } elseif ($request->hasfile('all')) {
+            $this->validate($request, [
+                'cap' => 'required|max:30',
+            ]);
         }
 
         $url = '/media/photo/edit?event='.$request->id;
@@ -179,6 +201,11 @@ class MediaController extends Controller
             return redirect('/media');
         }
 
+        $this->validate($request, [
+            'event' => 'required',
+            'url' => 'required',
+        ]);
+
         $video = new Video;
         $video->event_id = $request->event;
         $video->featured = true;
@@ -196,6 +223,8 @@ class MediaController extends Controller
         $video->save();
 
         $url = '/media/video/edit?='.$request->event;
+
+        flash('Video successfully added')->success();
 
         return redirect($url);
     }
@@ -224,6 +253,10 @@ class MediaController extends Controller
         if ($this->notAdmin()) {
             flash('You are not authorized to access this view')->error;
         }
+
+        $this->validate($request, [
+            'url.*' => 'required',
+        ]);
 
         $rdurl;
 

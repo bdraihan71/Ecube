@@ -25,6 +25,22 @@ class TicketIssueController extends Controller
     
     public function store (Request $request)
     {
+        if ($this->notAdmin()) {
+            flash('You are not authorized to access this view')->error();
+
+            return redirect('/home');
+        }
+
+        $this->validate($request, [
+            'event' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+            'company' => 'nullable',
+            'phone' => 'nullable',
+            'present' => 'nullable',
+            'designation' => 'nullable',
+        ]);
+
         $ticket = IssueTicket::create([
             'event_id' => $request->event,
             'name' => $request->name,

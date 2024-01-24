@@ -83,7 +83,7 @@ class PaymentsController extends Controller
 
             $invoice = new Invoice;
             $invoice->number = ($total_tickets - $unsold_tickets + 1);
-            $invoice->barcode = $barcode;
+            $invoice->barcode = '1 '.$barcode;
             $invoice->save();
 
             $ticket = Ticket::where('event_id', $id)->where('ticket_type_id', $type)->whereNull('user_id')->first();
@@ -91,6 +91,9 @@ class PaymentsController extends Controller
             $ticket->invoice_id = $invoice->id;
             $ticket->save();
             $user = User::find($user);
+
+            $invoice->barcode = '1 '.$id.' '.$ticket->id;
+            $invoice->save();
 
             Mail::to($user->email)->send(new vMail($user, $ticket));
 
@@ -120,6 +123,12 @@ class PaymentsController extends Controller
 
     public function store (Request $request)
     {
+        $this->validate($request, [
+            'id' => 'required',
+            'street' => 'required',
+            'division' => 'division',
+        ]);
+
         $address = new Address;
         $address->invoice_id = $request->id;
         $address->address = $request->street;

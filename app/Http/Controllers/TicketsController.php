@@ -43,6 +43,12 @@ class TicketsController extends Controller
             flash('You are not authorized to access this')->error();
             return redirect('/');
         }
+
+        $this->validate($request, [
+            'type.*' => 'required|max:30',
+            'number.*' => 'required',
+            'price.*' => 'required'
+        ]);
         
         $types = $request->type;
         $numbers = $request->number;
@@ -133,7 +139,7 @@ class TicketsController extends Controller
 
             $invoice = new Invoice;
             $invoice->number = ($total_tickets - $unsold_tickets + 1);
-            $invoice->barcode = $barcode;
+            $invoice->barcode = '1 '.$barcode;
             $invoice->save();
 
             $ticket = Ticket::where('event_id', $type->event->id)->where('ticket_type_id', $type->id)->whereNull('user_id')->first();

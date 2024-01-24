@@ -33,9 +33,9 @@ class ProfilesController extends Controller
         }
 
         $this->validate($request, [
-            'f_name' => 'required',
-            'm_name' => 'nullable',
-            'l_name' => 'required',
+            'f_name' => 'required|max:80',
+            'm_name' => 'nullable|max:80',
+            'l_name' => 'required|max:80',
             'email' => 'required',
             'password' => 'required',
             'confirmed_password' => 'required',
@@ -170,6 +170,14 @@ class ProfilesController extends Controller
 
     public function social (Request $request)
     {
+        $this->validate($request, [
+            'id' => 'required',
+            'name' => 'required',
+            'phone' => 'required',
+            'dob' => 'required|date',
+            'gender' => 'required',
+        ]);
+
         $user = User::where('id', $request->id)->first();
         $profile = new Profile;
         $name = explode(' ', $request->name);
@@ -225,6 +233,10 @@ class ProfilesController extends Controller
 
     public function name (Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+        ]);
+
         $profile = Profile::find(auth()->user()->id);
 
         $name = explode(' ', $request->name);
@@ -286,6 +298,10 @@ class ProfilesController extends Controller
 
     public function phone (Request $request)
     {
+        $this->validate($request, [
+            'phone' => 'required',
+        ]);
+
         $profile = auth()->user()->profile;
         $profile->phone = $request->phone;
         $profile->save();
@@ -295,6 +311,10 @@ class ProfilesController extends Controller
 
     public function facebook (Request $request)
     {
+        $this->validate($request, [
+            'fb_url' => 'required',
+        ]);
+
         $profile = auth()->user()->profile;
         $profile->fb_url = $request->fb_url;
         $profile->save();
@@ -362,6 +382,15 @@ class ProfilesController extends Controller
             flash('You are not authrized to access this view')->error();
             return redirect('/');
         }
+
+        $this->validate($request, [
+            'f_name' => 'required|max:80',
+            'm_name' => 'nullable|max:80',
+            'l_name' => 'required|max:80',
+            'email' => 'required|email',
+            'password' => 'required|confirmed',
+            'phone' => 'required'
+        ]);
 
         $user = User::where('email', $request->email)->first();
 
